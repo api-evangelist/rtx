@@ -1,0 +1,20 @@
+aid: rtx
+url: https://raw.githubusercontent.com/api-evangelist/rtx/refs/heads/main/apis.yml
+apis:
+  - aid: rtx:eagle-api
+    name: RTX EAGLE API
+    tags:
+      - Aerospace
+      - Defense
+      - Intelligence
+      - Data Analytics
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api.rtx.com
+    humanURL: https://www.rtx.com/raytheon/eagle/support
+    properties:
+      - url: https://www.rtx.com/raytheon/eagle/support
+        type: Documentation
+      - url: openapi/rtx-eagle-api-openapi.yml
+        type: OpenAPI
+    description: >-
+      The RTX EAGLE API is part of the EAGLE application bundle developed by Raytheon, a subsidiary of RTX Corporation. EAGLE (Enterprise Architecture for Government Leveraged Environments) provides intelligence analysis and data management capabilities. The EAGLE API allows integration with the EAGLE Vision and EAGLE Web Portal components for data analytics and intelligence workflows.
