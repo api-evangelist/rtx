@@ -1,0 +1,61 @@
+openapi: 3.1.0
+info:
+  title: RTX EAGLE API
+  description: >-
+    The RTX EAGLE API is part of the EAGLE (Enterprise Architecture for
+    Government Leveraged Environments) application bundle developed by
+    Raytheon, a subsidiary of RTX Corporation. The API provides integration
+    capabilities for intelligence analysis, data management, and analytics
+    workflows used in defense and government environments.
+  version: '1.0'
+servers:
+  - url: https://api.rtx.com/eagle
+tags:
+  - name: Data Sources
+    description: Manage and query intelligence data sources.
+  - name: Analytics
+    description: Run analytics jobs and retrieve analysis results.
+  - name: Reports
+    description: Generate and retrieve intelligence reports.
+paths:
+  /data-sources:
+    get:
+      operationId: listDataSources
+      summary: List data sources
+      description: >-
+        Retrieves a list of configured data sources available for intelligence
+        analysis within the EAGLE platform.
+      tags:
+        - Data Sources
+      responses:
+        '200':
+          description: Success
+  /analytics:
+    get:
+      operationId: listAnalytics
+      summary: List analytics jobs
+      description: >-
+        Retrieves a list of analytics jobs and their statuses within the
+        EAGLE analytics engine.
+      tags:
+        - Analytics
+      responses:
+        '200':
+          description: Success
+  /reports:
+    get:
+      operationId: listReports
+      summary: List reports
+      description: >-
+        Retrieves a list of generated intelligence reports available for
+        review and distribution.
+      tags:
+        - Reports
+      responses:
+        '200':
+          description: Success
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
