@@ -11,10 +11,10 @@ info:
 servers:
   - url: https://api.rtx.com/eagle
 tags:
-  - name: Data Sources
-    description: Manage and query intelligence data sources.
   - name: Analytics
     description: Run analytics jobs and retrieve analysis results.
+  - name: Data Sources
+    description: Manage and query intelligence data sources.
   - name: Reports
     description: Generate and retrieve intelligence reports.
 paths:
