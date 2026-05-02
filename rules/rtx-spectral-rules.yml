@@ -1,0 +1,59 @@
+rules:
+  rtx-operation-ids-camel-case:
+    description: All operationIds must use camelCase naming convention.
+    severity: warn
+    given: "$.paths.*[get,post,put,patch,delete].operationId"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-zA-Z0-9]*$"
+
+  rtx-tags-title-case:
+    description: All tags must use Title Case.
+    severity: warn
+    given: "$.tags[*].name"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z][a-zA-Z0-9 ]*$"
+
+  rtx-bearer-auth-required:
+    description: RTX EAGLE API uses bearer token authentication.
+    severity: warn
+    given: "$.components.securitySchemes"
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          properties:
+            bearerAuth:
+              type: object
+
+  rtx-paths-kebab-case:
+    description: All path segments must use kebab-case.
+    severity: warn
+    given: "$.paths"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^(/[a-z0-9{}-]+)+$"
+
+  rtx-response-200-defined:
+    description: All operations must define a 200 response.
+    severity: error
+    given: "$.paths.*[get,post,put,patch,delete].responses"
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          required:
+            - "200"
+
+  rtx-summaries-title-case:
+    description: Operation summaries must use Title Case.
+    severity: warn
+    given: "$.paths.*[get,post,put,patch,delete].summary"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z]"

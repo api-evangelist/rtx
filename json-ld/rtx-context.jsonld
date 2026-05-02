@@ -1,0 +1,46 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "rtx": "https://www.rtx.com/vocab/eagle/",
+    "schema": "https://schema.org/",
+    "mil": "https://www.dodmil.mil/vocab/",
+
+    "DataSource": "rtx:DataSource",
+    "AnalyticsJob": "rtx:AnalyticsJob",
+    "Report": "rtx:Report",
+
+    "id": "@id",
+    "name": {
+      "@id": "schema:name",
+      "@type": "schema:Text"
+    },
+    "description": {
+      "@id": "schema:description",
+      "@type": "schema:Text"
+    },
+    "status": {
+      "@id": "rtx:operationalStatus",
+      "@type": "schema:Text"
+    },
+    "type": {
+      "@id": "schema:additionalType",
+      "@type": "schema:Text"
+    },
+    "program": {
+      "@id": "rtx:defenseProgram",
+      "@type": "schema:Text"
+    },
+    "classification": {
+      "@id": "mil:classificationLevel",
+      "@type": "schema:Text"
+    },
+    "createdAt": {
+      "@id": "schema:dateCreated",
+      "@type": "schema:DateTime"
+    },
+    "completedAt": {
+      "@id": "schema:dateModified",
+      "@type": "schema:DateTime"
+    }
+  }
+}

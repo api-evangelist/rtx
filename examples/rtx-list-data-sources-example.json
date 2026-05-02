@@ -1,0 +1,32 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.rtx.com/eagle/data-sources",
+    "headers": {
+      "Authorization": "Bearer YOUR_EAGLE_API_TOKEN"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": [
+      {
+        "id": "ds-001",
+        "name": "F-35 Logistics Database",
+        "type": "LogisticsDB",
+        "status": "Active",
+        "description": "Parts, maintenance, and supply chain data for F-35 program",
+        "program": "F-35 JSF",
+        "classification": "CUI"
+      },
+      {
+        "id": "ds-002",
+        "name": "Patriot Maintenance Intelligence",
+        "type": "IntelligenceDB",
+        "status": "Active",
+        "description": "Maintenance history and predictive analytics data for Patriot system",
+        "program": "Patriot",
+        "classification": "UNCLASSIFIED"
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api.rtx.com/eagle/schemas/data-source",
+  "title": "RTX EAGLE Data Source",
+  "description": "A configured intelligence or logistics data source in the RTX EAGLE platform",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the data source"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name of the data source"
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of data source (e.g., LogisticsDB, IntelligenceDB, AnalyticsDB)"
+    },
+    "status": {
+      "type": "string",
+      "description": "Current operational status",
+      "enum": ["Active", "Inactive", "Maintenance", "Error"]
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of data contained in this source"
+    },
+    "program": {
+      "type": "string",
+      "description": "Defense program this data source is associated with"
+    },
+    "classification": {
+      "type": "string",
+      "description": "Data classification level"
+    }
+  },
+  "required": ["id", "name", "type", "status"]
+}

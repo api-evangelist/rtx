@@ -1,0 +1,45 @@
+{
+  "title": "RTX EAGLE Data Structures",
+  "description": "JSON structure documentation for the RTX EAGLE logistics support analysis platform API",
+  "version": "1.0",
+  "entities": {
+    "DataSource": {
+      "description": "A configured intelligence or logistics data source",
+      "fields": {
+        "id": { "type": "string", "description": "Unique identifier", "required": true },
+        "name": { "type": "string", "description": "Data source name", "required": true },
+        "type": { "type": "string", "description": "Data source type", "required": true },
+        "status": { "type": "string", "description": "Active | Inactive | Maintenance | Error", "required": true },
+        "description": { "type": "string", "description": "Description of data contents" },
+        "program": { "type": "string", "description": "Associated defense program" },
+        "classification": { "type": "string", "description": "Data classification level" }
+      }
+    },
+    "AnalyticsJob": {
+      "description": "An analytics job in the EAGLE analytics engine",
+      "fields": {
+        "id": { "type": "string", "description": "Job identifier", "required": true },
+        "name": { "type": "string", "description": "Job name", "required": true },
+        "status": {
+          "type": "string",
+          "description": "Queued | Running | Complete | Failed",
+          "required": true
+        },
+        "type": { "type": "string", "description": "Type of analytics (predictive, descriptive, etc.)" },
+        "createdAt": { "type": "string", "description": "Job creation timestamp" },
+        "completedAt": { "type": "string", "description": "Job completion timestamp" }
+      }
+    },
+    "Report": {
+      "description": "A generated intelligence or logistics report",
+      "fields": {
+        "id": { "type": "string", "description": "Report identifier", "required": true },
+        "title": { "type": "string", "description": "Report title", "required": true },
+        "type": { "type": "string", "description": "Report type (LSA, maintenance, supply chain, etc.)" },
+        "status": { "type": "string", "description": "Draft | Final | Distributed" },
+        "createdAt": { "type": "string", "description": "Report creation timestamp" },
+        "program": { "type": "string", "description": "Associated defense program" }
+      }
+    }
+  }
+}

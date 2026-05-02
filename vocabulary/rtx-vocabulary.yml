@@ -1,0 +1,90 @@
+name: RTX EAGLE Vocabulary
+description: >-
+  Domain vocabulary for RTX Corporation's EAGLE logistics support analysis
+  platform, covering defense logistics, integrated logistics support (ILS),
+  and analytics concepts used in defense program management.
+version: "1.0"
+created: "2026-05-02"
+modified: "2026-05-02"
+
+domains:
+  - name: Logistics Support Analysis
+    description: Core concepts in logistics support analysis (LSA) for defense systems
+    terms:
+      - term: EAGLE
+        definition: >-
+          Enhanced Automated Graphical Logistics Environment. Raytheon's integrated
+          logistics support software platform for managing defense system lifecycles.
+      - term: Logistics Support Analysis (LSA)
+        definition: >-
+          A structured analytical process for identifying and evaluating logistics
+          support resource requirements for defense systems throughout their lifecycle.
+      - term: Integrated Logistics Support (ILS)
+        definition: >-
+          A management and technical process that provides planning, funding, and
+          controls for the identification and development of logistics support
+          requirements for defense systems.
+      - term: FRACAS
+        definition: >-
+          Failure Reporting, Analysis, and Corrective Action System. A process
+          for systematically documenting and resolving failures in defense equipment.
+      - term: Configuration Management
+        definition: >-
+          A discipline applying technical and administrative direction to identify
+          and document functional and physical characteristics of a defense system.
+
+  - name: Defense Program Types
+    description: Categories of defense programs and systems managed in EAGLE
+    terms:
+      - term: Program
+        definition: >-
+          A defense acquisition program managed by the Department of Defense,
+          such as F-35 JSF, Patriot, or StormBreaker.
+      - term: System
+        definition: >-
+          A defense system or weapon system, such as a missile system, radar,
+          or aircraft, whose logistics data is managed in EAGLE.
+
+  - name: Analytics Operations
+    description: Types of analytics performed on logistics data
+    terms:
+      - term: Predictive Analytics
+        definition: >-
+          Using historical maintenance and operational data to predict when
+          components will require maintenance or replacement.
+      - term: Descriptive Analytics
+        definition: >-
+          Summarizing historical logistics data to understand past performance
+          and resource utilization.
+      - term: Prescriptive Analytics
+        definition: >-
+          Recommending optimal maintenance schedules and supply chain decisions
+          based on analysis results.
+
+  - name: Data Classification
+    description: Government data classification levels used with EAGLE
+    terms:
+      - term: UNCLASSIFIED
+        definition: Information not requiring protection against unauthorized disclosure.
+      - term: CUI
+        definition: >-
+          Controlled Unclassified Information. Information requiring safeguarding
+          per laws, regulations, and government-wide policies.
+      - term: CONFIDENTIAL
+        definition: >-
+          Classified national security information requiring protection because
+          unauthorized disclosure could damage national security.
+      - term: SECRET
+        definition: >-
+          Classified national security information requiring protection because
+          unauthorized disclosure could cause serious damage to national security.
+
+tags:
+  - Defense
+  - Aerospace
+  - Government
+  - Logistics
+  - Intelligence
+  - Military
+  - Raytheon
+  - Fortune 500
