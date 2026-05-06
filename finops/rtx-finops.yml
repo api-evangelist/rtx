@@ -1,5 +1,6 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
@@ -8,128 +9,62 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: RTX
 providerId: rtx
-publisherName: RTX
-serviceCategory: API
+publisherName: RTX Corporation
+serviceCategory: Defense / Aerospace Software
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Defense
   - Aerospace
   - Government
-  - Logistics
-  - Intelligence
-  - Military
   - FinOps
-  - Cost Management
   - FOCUS
-description: FinOps framework definition for the RTX API surface. Provides a FOCUS-aligned mapping for
-  cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+description: >-
+  RTX defense and aerospace software is sold under government program contracts. FinOps
+  treatment is program-cost driven, not usage-metered.
+notes: >-
+  No public usage API or itemized billing exists. Cost is dominated by program-of-record
+  contracts and FFP / cost-plus structures rather than pay-as-you-go meters.
+sources:
+  - https://www.rtx.com/
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
+  pricingCategory: Government Program Contract
+  billingFrequency: Per Contract
   billingCurrency: USD
   chargeCategories:
-    - Usage
     - Purchase
-    - Tax
-    - Credit
-    - Adjustment
-  chargeFrequency: Recurring
 focusColumns:
-  ServiceName: RTX
-  ServiceCategory: Developer Tools / API
+  ServiceName: RTX Defense Software
+  ServiceCategory: Defense / Aerospace Software
   ProviderName: RTX
-  PublisherName: RTX
-  InvoiceIssuerName: RTX
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  PublisherName: RTX Corporation
   BillingCurrency: USD
-  ChargeCategory: Usage
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: program_cost
+    description: Program-contract obligation lines (FFP, cost-plus, T&M)
+    unit: contract_line
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
-    aggregation: sum
-    dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
-apis:
-  - name: RTX EAGLE API
-    baseURL: https://api.rtx.com/eagle
-    tags:
-      - Defense
-      - Logistics
-      - Intelligence
-      - Analytics
-      - Government
-    serviceName: RTX EAGLE API
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+      - program
+      - contract_type
+principles:
+  - name: Visibility
+    description: >-
+      Track RTX program cost through DFARS-compliant cost-accounting reports and the prime
+      contractor's program-management dashboards.
+  - name: Allocation
+    description: >-
+      Allocate RTX program cost to the contract WBS and the consuming program-of-record, not
+      to general IT.
+  - name: Optimization
+    description: >-
+      Optimization levers are program-management driven (scope control, EVM, sub-contract
+      management) rather than infrastructure auto-scaling.
+  - name: Accountability
+    description: >-
+      Program managers and contracting officers own RTX-related cost; review through standard
+      EVM and milestone reviews.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
