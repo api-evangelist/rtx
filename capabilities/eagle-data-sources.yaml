@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: RTX EAGLE API — Data Sources
+  description: 'RTX EAGLE API — Data Sources. 1 operations. Lead operation: List Data Sources. Self-contained Naftiko capability
+    covering one Rtx business surface.'
+  tags:
+  - Rtx
+  - Data Sources
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    RTX_API_KEY: RTX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: eagle-data-sources
+    baseUri: https://api.rtx.com/eagle
+    description: RTX EAGLE API — Data Sources business capability. Self-contained, no shared references.
+    resources:
+    - name: data-sources
+      path: /data-sources
+      operations:
+      - name: listdatasources
+        method: GET
+        description: List Data Sources
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.RTX_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: eagle-data-sources-rest
+    port: 8080
+    description: REST adapter for RTX EAGLE API — Data Sources. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/data-sources
+      name: data-sources
+      description: REST surface for data-sources.
+      operations:
+      - method: GET
+        name: listdatasources
+        description: List Data Sources
+        call: eagle-data-sources.listdatasources
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: eagle-data-sources-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for RTX EAGLE API — Data Sources. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-data-sources
+      description: List Data Sources
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: eagle-data-sources.listdatasources
+      outputParameters:
+      - type: object
+        mapping: $.

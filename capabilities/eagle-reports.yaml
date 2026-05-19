@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: RTX EAGLE API — Reports
+  description: 'RTX EAGLE API — Reports. 1 operations. Lead operation: List Reports. Self-contained Naftiko capability covering
+    one Rtx business surface.'
+  tags:
+  - Rtx
+  - Reports
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    RTX_API_KEY: RTX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: eagle-reports
+    baseUri: https://api.rtx.com/eagle
+    description: RTX EAGLE API — Reports business capability. Self-contained, no shared references.
+    resources:
+    - name: reports
+      path: /reports
+      operations:
+      - name: listreports
+        method: GET
+        description: List Reports
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.RTX_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: eagle-reports-rest
+    port: 8080
+    description: REST adapter for RTX EAGLE API — Reports. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/reports
+      name: reports
+      description: REST surface for reports.
+      operations:
+      - method: GET
+        name: listreports
+        description: List Reports
+        call: eagle-reports.listreports
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: eagle-reports-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for RTX EAGLE API — Reports. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-reports
+      description: List Reports
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: eagle-reports.listreports
+      outputParameters:
+      - type: object
+        mapping: $.
