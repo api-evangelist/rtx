@@ -1,0 +1,228 @@
+{
+  "item": [
+    {
+      "id": "e763abc4-9792-4794-9523-be8c89e46d40",
+      "name": "Analytics",
+      "description": {
+        "content": "Run analytics jobs and retrieve analysis results.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5b02491f-f6d7-4eb8-bfcf-edcc5644be27",
+          "name": "List Analytics Jobs",
+          "request": {
+            "name": "List Analytics Jobs",
+            "description": {
+              "content": "Retrieves a list of analytics jobs and their statuses within the EAGLE analytics engine.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "analytics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3d1f94ac-460e-4536-8a49-eaf93c057318",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6c006f43-ceab-4e6b-bef2-13efceaa8089",
+      "name": "Data Sources",
+      "description": {
+        "content": "Manage and query intelligence data sources.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "074e54ac-8fad-4dde-9bbd-3d663e48c3bc",
+          "name": "List Data Sources",
+          "request": {
+            "name": "List Data Sources",
+            "description": {
+              "content": "Retrieves a list of configured data sources available for intelligence analysis within the EAGLE platform.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data-sources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "076c6259-4722-4604-958a-e1b5d7ca5a8f",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data-sources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "81e39277-75af-4434-81b4-a5e2b9744220",
+      "name": "Reports",
+      "description": {
+        "content": "Generate and retrieve intelligence reports.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f43ec8c7-bc5b-4b87-a72a-c0b1888ad70b",
+          "name": "List Reports",
+          "request": {
+            "name": "List Reports",
+            "description": {
+              "content": "Retrieves a list of generated intelligence reports available for review and distribution.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reports"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "94c78ce9-e1d7-43f2-86de-cd9b65ab23ea",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.rtx.com/eagle",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "972712ea-68bb-4b9a-b07c-5f8fa8b46712",
+    "name": "RTX EAGLE API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The RTX EAGLE API is part of the EAGLE (Enterprise Architecture for Government Leveraged Environments) application bundle developed by Raytheon, a subsidiary of RTX Corporation. The API provides integration capabilities for intelligence analysis, data management, and analytics workflows used in defense and government environments.",
+      "type": "text/plain"
+    }
+  }
+}
