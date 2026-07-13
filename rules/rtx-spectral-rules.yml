@@ -1,26 +1,38 @@
+# rtx — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - servers-https-only: 100% of servers already https (error)
+#   - servers-expected-domain: 1/1 servers on rtx.com
+#   - operationid-casing: camel @ 100% (n=3)
+#   - security: neither global nor consistently per-op — schemes-defined only
+#   - merge: kept 6 existing, added 3 measured, upgraded 0
+#   - added: servers-https-only, servers-expected-domain, no-empty-descriptions
+extends:
+  - spectral:oas
 rules:
   rtx-operation-ids-camel-case:
     description: All operationIds must use camelCase naming convention.
     severity: warn
-    given: "$.paths.*[get,post,put,patch,delete].operationId"
+    given: $.paths.*[get,post,put,patch,delete].operationId
     then:
       function: pattern
       functionOptions:
-        match: "^[a-z][a-zA-Z0-9]*$"
-
+        match: ^[a-z][a-zA-Z0-9]*$
   rtx-tags-title-case:
     description: All tags must use Title Case.
     severity: warn
-    given: "$.tags[*].name"
+    given: $.tags[*].name
     then:
       function: pattern
       functionOptions:
-        match: "^[A-Z][a-zA-Z0-9 ]*$"
-
+        match: ^[A-Z][a-zA-Z0-9 ]*$
   rtx-bearer-auth-required:
     description: RTX EAGLE API uses bearer token authentication.
     severity: warn
-    given: "$.components.securitySchemes"
+    given: $.components.securitySchemes
     then:
       function: schema
       functionOptions:
@@ -28,32 +40,51 @@ rules:
           properties:
             bearerAuth:
               type: object
-
   rtx-paths-kebab-case:
     description: All path segments must use kebab-case.
     severity: warn
-    given: "$.paths"
+    given: $.paths
     then:
       function: pattern
       functionOptions:
-        match: "^(/[a-z0-9{}-]+)+$"
-
+        match: ^(/[a-z0-9{}-]+)+$
   rtx-response-200-defined:
     description: All operations must define a 200 response.
     severity: error
-    given: "$.paths.*[get,post,put,patch,delete].responses"
+    given: $.paths.*[get,post,put,patch,delete].responses
     then:
       function: schema
       functionOptions:
         schema:
           required:
-            - "200"
-
+          - '200'
   rtx-summaries-title-case:
     description: Operation summaries must use Title Case.
     severity: warn
-    given: "$.paths.*[get,post,put,patch,delete].summary"
+    given: $.paths.*[get,post,put,patch,delete].summary
     then:
       function: pattern
       functionOptions:
-        match: "^[A-Z]"
+        match: ^[A-Z]
+  servers-https-only:
+    description: Server URLs must use HTTPS.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: ^https://
+  servers-expected-domain:
+    description: Server URLs should be on the rtx.com domain.
+    severity: warn
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: rtx\.com
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings.
+    severity: warn
+    given: $..description
+    then:
+      function: truthy

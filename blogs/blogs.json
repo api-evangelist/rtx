@@ -1,0 +1,21 @@
+{
+  "repo": "rtx",
+  "feeds": [
+    {
+      "source": "https://www.rtx.com/news",
+      "feed_url": "https://www.rtx.com/news",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://github.com/raytheonbbn",
+      "feed_url": "https://github.com/raytheonbbn",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 3
+}
