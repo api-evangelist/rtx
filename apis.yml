@@ -45,6 +45,8 @@ apis:
       - type: OpenAPI
         url: https://raw.githubusercontent.com/api-evangelist/rtx/refs/heads/main/openapi/rtx-eagle-api-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/rtx-agentic-access.yml
   - type: DomainSecurity
     url: security/rtx-domain-security.yml
   - type: Authentication
