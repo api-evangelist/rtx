@@ -7,9 +7,22 @@ description: >-
   RTX BBN Technologies (a Raytheon subsidiary) develops open-source software including SPARQL triple stores, NLP
   frameworks, and TAK ecosystem plugins for government and military situational awareness platforms.
 type: Index
+accessModel:
+  pricing: enterprise
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Enterprise · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/rtx.png
 tags:
   - Defense
   - Aerospace
@@ -23,27 +36,42 @@ url: https://raw.githubusercontent.com/api-evangelist/rtx/refs/heads/main/apis.y
 specificationVersion: '0.19'
 x-fortune: Fortune 500
 apis:
-  - aid: rtx:eagle-api
-    name: RTX EAGLE API
-    description: >-
-      The RTX EAGLE (Enhanced Automated Graphical Logistics Environment) API provides integration capabilities for the
-      EAGLE logistics support analysis platform developed by Raytheon. EAGLE manages product support throughout a
-      defense system's entire lifespan, enabling users to build and maintain logistics data, create reports, and support
-      fielded systems through operations and maintenance. The API supports integration with intelligence analysis, data
-      management, and analytics workflows used in defense and government environments.
-    humanURL: https://www.rtx.com/raytheon/eagle
-    baseURL: https://api.rtx.com/eagle
-    tags:
-      - Defense
-      - Logistics
-      - Intelligence
-      - Analytics
-      - Government
-    properties:
-      - type: Documentation
-        url: https://www.rtx.com/raytheon/eagle
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/rtx/refs/heads/main/openapi/rtx-eagle-api-openapi.yml
+- aid: rtx:rtx-analytics-api
+  name: RTX Analytics API
+  description: Run analytics jobs and retrieve analysis results.
+  humanURL: https://www.rtx.com/raytheon/eagle
+  baseURL: https://api.rtx.com/eagle
+  tags:
+  - Analytics
+  properties:
+  - type: OpenAPI
+    url: openapi/rtx-analytics-api-openapi.yml
+  - type: Documentation
+    url: https://www.rtx.com/raytheon/eagle
+- aid: rtx:rtx-data-sources-api
+  name: RTX Data Sources API
+  description: Manage and query intelligence data sources.
+  humanURL: https://www.rtx.com/raytheon/eagle
+  baseURL: https://api.rtx.com/eagle
+  tags:
+  - Data Sources
+  properties:
+  - type: OpenAPI
+    url: openapi/rtx-data-sources-api-openapi.yml
+  - type: Documentation
+    url: https://www.rtx.com/raytheon/eagle
+- aid: rtx:rtx-reports-api
+  name: RTX Reports API
+  description: Generate and retrieve intelligence reports.
+  humanURL: https://www.rtx.com/raytheon/eagle
+  baseURL: https://api.rtx.com/eagle
+  tags:
+  - Reports
+  properties:
+  - type: OpenAPI
+    url: openapi/rtx-reports-api-openapi.yml
+  - type: Documentation
+    url: https://www.rtx.com/raytheon/eagle
 common:
   - type: AgenticAccess
     url: agentic-access/rtx-agentic-access.yml
