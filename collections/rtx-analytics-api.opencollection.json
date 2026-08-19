@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "RTX EAGLE Analytics API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Analytics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Analytics Jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.rtx.com/eagle/analytics"
+          },
+          "docs": "Retrieves a list of analytics jobs and their statuses within the EAGLE analytics engine."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

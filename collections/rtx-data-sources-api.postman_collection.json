@@ -1,0 +1,90 @@
+{
+  "item": [
+    {
+      "id": "4eca4ae1-589d-4a6c-a953-d0e8c918249c",
+      "name": "Data Sources",
+      "description": {
+        "content": "Manage and query intelligence data sources.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "17d3adac-0345-43bf-87e9-5c7600638891",
+          "name": "List Data Sources",
+          "request": {
+            "name": "List Data Sources",
+            "description": {
+              "content": "Retrieves a list of configured data sources available for intelligence analysis within the EAGLE platform.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data-sources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "96f826cb-eb2f-4dd3-a21d-780582102aa2",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data-sources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.rtx.com/eagle",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0a548c7a-1fd6-4e17-a9cf-8b503e2060e0",
+    "name": "RTX EAGLE Analytics Data Sources API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The RTX EAGLE API is part of the EAGLE (Enterprise Architecture for Government Leveraged Environments) application bundle developed by Raytheon, a subsidiary of RTX Corporation. The API provides integration capabilities for intelligence analysis, data management, and analytics workflows used in defense and government environments.",
+      "type": "text/plain"
+    }
+  }
+}

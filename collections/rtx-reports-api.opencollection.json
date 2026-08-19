@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "RTX EAGLE Analytics Reports API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Reports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.rtx.com/eagle/reports"
+          },
+          "docs": "Retrieves a list of generated intelligence reports available for review and distribution."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

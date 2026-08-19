@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "RTX EAGLE Analytics Data Sources API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Data Sources",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Data Sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.rtx.com/eagle/data-sources"
+          },
+          "docs": "Retrieves a list of configured data sources available for intelligence analysis within the EAGLE platform."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
