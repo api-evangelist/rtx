@@ -7,6 +7,17 @@ description: >-
   RTX BBN Technologies (a Raytheon subsidiary) develops open-source software including SPARQL triple stores, NLP
   frameworks, and TAK ecosystem plugins for government and military situational awareness platforms.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: enterprise
   onboarding: self-serve
